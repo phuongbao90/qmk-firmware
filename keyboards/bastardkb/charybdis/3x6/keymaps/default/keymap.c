@@ -1,20 +1,15 @@
-/**
- * Copyright 2022 Charly Delay <charly@codesink.dev> (@0xcharly)
- *
- * This program is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 2 of the License, or
- * (at your option) any later version.
- *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
- *
- * You should have received a copy of the GNU General Public License
- * along with this program.  If not, see <http://www.gnu.org/licenses/>.
- */
+#include "features/layers.h"
+#include "features/key_modifiers.h"
+
 #include QMK_KEYBOARD_H
+// #include "g/keymap_engine.h"
+#include "g/keymap_combo.h"
+#include <stdio.h>
+#include <string.h>
+
+#include "features/custom_keys.c"
+#include "features/taphold.c"
+#include "features/one_shot.c"
 
 enum charybdis_keymap_layers {
     LAYER_BASE = 0,
@@ -27,40 +22,49 @@ enum charybdis_keymap_layers {
 
 // clang-format off
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
-  [LAYER_BASE] = LAYOUT(
-  // ╭──────────────────────────────────────────────────────╮ ╭──────────────────────────────────────────────────────╮
-       KC_LGUI,    KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,       KC_Y,    KC_U,    KC_I,    KC_O,    KC_P, KC_RGUI,
-  // ├──────────────────────────────────────────────────────┤ ├──────────────────────────────────────────────────────┤
-       KC_LCTL,    KC_A,    KC_S,    KC_D,    KC_F,    KC_G,       KC_H,    KC_J,    KC_K,    KC_L, KC_SCLN, KC_RCTL,
-  // ├──────────────────────────────────────────────────────┤ ├──────────────────────────────────────────────────────┤
-       KC_LSFT,    KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,       KC_N,    KC_M, KC_COMM,  KC_DOT, KC_SLSH, KC_RSFT,
-  // ╰──────────────────────────────────────────────────────┤ ├──────────────────────────────────────────────────────╯
-                                  KC_BSPC,  KC_SPC,   LOWER,      RAISE,  KC_ENT
-  //                            ╰───────────────────────────╯ ╰──────────────────╯
-  ),
 
-  [LAYER_LOWER] = LAYOUT(
-  // ╭──────────────────────────────────────────────────────╮ ╭──────────────────────────────────────────────────────╮
-       XXXXXXX, RGB_TOG, KC_MNXT, KC_MPLY, KC_MPRV, XXXXXXX,    KC_LBRC,    KC_7,    KC_8,    KC_9, KC_RBRC, XXXXXXX,
-  // ├──────────────────────────────────────────────────────┤ ├──────────────────────────────────────────────────────┤
-       XXXXXXX, KC_LGUI, KC_LALT, KC_LCTL, KC_LSFT, XXXXXXX,    KC_PPLS,    KC_4,    KC_5,    KC_6, KC_PMNS, XXXXXXX,
-  // ├──────────────────────────────────────────────────────┤ ├──────────────────────────────────────────────────────┤
-       XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, EE_CLR,  QK_BOOT,    KC_PAST,    KC_1,    KC_2,    KC_3, KC_PSLS, XXXXXXX,
-  // ╰──────────────────────────────────────────────────────┤ ├──────────────────────────────────────────────────────╯
-                                  XXXXXXX, XXXXXXX, _______,    XXXXXXX, _______
-  //                            ╰───────────────────────────╯ ╰──────────────────╯
+  [_COLEMAK] = LAYOUT(
+       XXXXXXX,     Q_ESC,       KC_W,       KC_F,       KC_P,         KC_B,                   KC_J,        KC_L,       KC_U,        KC_Y,       KC_SCLN,    XXXXXXX,    
+       XXXXXXX,     CTL_A,       ALT_R,      GUI_S,      SHT_T,        HYP_G,                  HYP_M,       SHT_N,      GUI_E,       ALT_I,      CTL_O,      XXXXXXX,    
+       XXXXXXX,     KC_Z,        KC_X,       KC_C,       NUM_D,        KC_V,                   KC_K,        RCMD_H,     KC_COMM,     KC_DOT,     KC_SLSH,    XXXXXXX,    
+                                                       SYM_BSP,    NAV_SPC,    XXXXXXX,        MOU_ENT,     KC_TAB
   ),
-
-  [LAYER_RAISE] = LAYOUT(
-  // ╭──────────────────────────────────────────────────────╮ ╭──────────────────────────────────────────────────────╮
-       XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,    XXXXXXX, KC_VOLU, KC_MUTE, KC_VOLD, XXXXXXX, XXXXXXX,
-  // ├──────────────────────────────────────────────────────┤ ├──────────────────────────────────────────────────────┤
-       XXXXXXX, KC_LEFT,   KC_UP, KC_DOWN, KC_RGHT, XXXXXXX,    XXXXXXX, KC_RSFT, KC_RCTL, KC_RALT, KC_RGUI, XXXXXXX,
-  // ├──────────────────────────────────────────────────────┤ ├──────────────────────────────────────────────────────┤
-       XXXXXXX, KC_HOME, KC_PGUP, KC_PGDN,  KC_END, XXXXXXX,    QK_BOOT, EE_CLR,  XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
-  // ╰──────────────────────────────────────────────────────┤ ├──────────────────────────────────────────────────────╯
-                                  _______, _______, XXXXXXX,    _______, XXXXXXX
-  //                            ╰───────────────────────────╯ ╰──────────────────╯
+  [_NAV] = LAYOUT(
+       XXXXXXX,     KC_ESC,     XXXXXXX,    XXXXXXX,     XXXXXXX,       XXXXXXX,               KC_PGUP,     C(KC_LEFT), KC_UP,       C(KC_RIGHT), KC_HOME,    XXXXXXX,
+       XXXXXXX,     KC_LCTL,    KC_LOPT,    KC_LCMD,     KC_LSFT,       KC_HYPR,               KC_PGDN,     KC_LEFT,    KC_DOWN,     KC_RGHT,     KC_END,     XXXXXXX,
+       XXXXXXX,     CTL_SFT,    OPT_SFT,    CMD_SFT,     XXXXXXX,       XXXXXXX,               G(KC_LBRC),  G(KC_RBRC), LAG(KC_LEFT),LAG(KC_RGHT),XXXXXXX,    XXXXXXX,
+                                                       _______,     TG(_NAV),   XXXXXXX,       _______,     TG(_NAV)
+  ),
+  [_SYM] = LAYOUT(
+       XXXXXXX,     KC_GRV,     XXXXXXX,    XXXXXXX,     XXXXXXX,       XXXXXXX,               KC_MINUS,    KC_EXLM,    KC_LBRC,     KC_RBRC,     KC_SCLN,    XXXXXXX,
+       XXXXXXX,     XXXXXXX,    XXXXXXX,    KC_AT,       KC_HASH,       XXXXXXX,               KC_EQUAL,    KC_AMPR,    KC_LPRN,     KC_RPRN,     KC_QUOT,    XXXXXXX,
+       XXXXXXX,     XXXXXXX,    XXXXXXX,    KC_PERC,     KC_ASTR,       KC_CIRC,               KC_BSLS,     KC_DOLLAR,  KC_COMM,     KC_DOT,      KC_SLSH,    XXXXXXX,
+                                                       _______,     _______,    XXXXXXX,       _______,     TG(_SYM)
+  ),
+  [_NUM] = LAYOUT(
+       XXXXXXX,     XXXXXXX,    XXXXXXX,    XXXXXXX,     XXXXXXX,       XXXXXXX,               KC_MINUS,    KC_7,       KC_8,        KC_9,        KC_PPLS,    XXXXXXX,
+       XXXXXXX,     KC_F1,      KC_F12,     XXXXXXX,     XXXXXXX,       XXXXXXX,               KC_EQUAL,    KC_4,       KC_5,        KC_6,        KC_MINUS,   XXXXXXX,
+       XXXXXXX,     XXXXXXX,    XXXXXXX,    XXXXXXX,     XXXXXXX,       XXXXXXX,               KC_0,        KC_1,       KC_2,        KC_3,        KC_SLSH,    XXXXXXX,
+                                                       _______,     _______,    XXXXXXX,       KC_COMMA,    KC_DOT
+  ),
+  [_MOUSE] = LAYOUT(
+       XXXXXXX,     XXXXXXX,    XXXXXXX,    XXXXXXX,     XXXXXXX,       XXXXXXX,               XXXXXXX,     XXXXXXX,    XXXXXXX,     XXXXXXX,     XXXXXXX,    XXXXXXX,
+       XXXXXXX,     XXXXXXX,    XXXXXXX,    XXXXXXX,     XXXXXXX,       XXXXXXX,               XXXXXXX,     XXXXXXX,    XXXXXXX,     XXXXXXX,     XXXXXXX,    XXXXXXX,
+       XXXXXXX,     XXXXXXX,    XXXXXXX,    XXXXXXX,     XXXXXXX,       XXXXXXX,               XXXXXXX,     XXXXXXX,    XXXXXXX,     XXXXXXX,     XXXXXXX,    XXXXXXX,
+                                                       _______,     _______,    XXXXXXX,       _______,     XXXXXXX
   ),
 };
 // clang-format on
+
+// ┌────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┐
+// │ P R O C E S S _ R E C O R D _ U S E R                                                                                                                               │
+// └────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘
+// ▝▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▘
+
+bool process_record_user(uint16_t keycode, keyrecord_t *record) {
+    if (!tap_hold_process_record_user(keycode, record)) return false;
+    if (!one_shot_process_record_user(keycode, record)) return false;
+    if (!custom_keys_process_record_user(keycode, record)) return false;
+
+    return true;
+}

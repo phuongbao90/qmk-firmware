@@ -18,7 +18,7 @@
 #pragma once
 
 /* Handedness. */
-#define MASTER_RIGHT
+#define MASTER_LEFT
 
 // To use the handedness pin, resistors need to be installed on the adapter PCB.
 // If so, uncomment the following code, and undefine MASTER_RIGHT above.
@@ -36,3 +36,21 @@
 #define RP2040_BOOTLOADER_DOUBLE_TAP_RESET
 #define RP2040_BOOTLOADER_DOUBLE_TAP_RESET_LED GP17
 #define RP2040_BOOTLOADER_DOUBLE_TAP_RESET_TIMEOUT 1000U
+
+// my configs
+#define DYNAMIC_KEYMAP_LAYER_COUNT 6
+#define BOTH_SHIFTS_TURNS_ON_CAPS_WORD
+
+#define COMBO_COUNT 2
+#define COMBO_VARIABLE_LEN
+#define COMBO_ALLOW_ACTION_KEYS 
+
+#define PERMISSIVE_HOLD      
+#ifdef TAPPING_TERM          
+    #undef TAPPING_TERM      
+#endif                       
+#define TAPPING_TERM 150     
+
+#define MOUSEKEY_MAX_SPEED 5
+#define MOUSEKEY_MOVE_DELTA 5
+#define NO_AUTO_SHIFT_ALPHA   

@@ -6,6 +6,7 @@
   "author": "phuongbao90 <phuongbao90@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "compile:cha": "qmk compile -kb bastardkb/charybdis/3x6/v1/elitec -km default"
+    "compile:cha": "qmk compile -kb bastardkb/charybdis/3x6/v1/elitec -km default",
+    "flash:cha": "qmk flash -kb bastardkb/charybdis/3x6/v2/splinky_3 -km default"
   }
 }

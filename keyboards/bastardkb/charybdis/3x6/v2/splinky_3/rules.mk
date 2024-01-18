@@ -11,6 +11,13 @@ BACKLIGHT_ENABLE = no       # Enable keyboard backlight functionality
 RGBLIGHT_ENABLE = no        # Enable keyboard RGB underglow
 AUDIO_ENABLE = no           # Audio output
 
+LTO_ENABLE = yes
+COMBO_ENABLE = yes
+CAPS_WORD_ENABLE = yes
+AUTO_SHIFT_ENABLE = yes
+REPEAT_KEY_ENABLE = yes
+VPATH += keyboards/gboards/
+
 AUDIO_SUPPORTED = no        # Audio is not supported
 RGB_MATRIX_SUPPORTED = yes  # RGB matrix is supported and enabled by default
 RGBLIGHT_SUPPORTED = yes    # RGB underglow is supported, but not enabled by default
