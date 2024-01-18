@@ -1,0 +1,13 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "C/C++ Runner: Debug Session",
+      "type": "lldb",
+      "request": "launch",
+      "args": [],
+      "cwd": "/Users/bao/qmk_firmware/keyboards/sofle/keymaps/phuongbao90",
+      "program": "/Users/bao/qmk_firmware/keyboards/sofle/keymaps/phuongbao90/build/Debug/outDebug"
+    }
+  ]
+}
