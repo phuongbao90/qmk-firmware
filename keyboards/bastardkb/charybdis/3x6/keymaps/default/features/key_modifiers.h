@@ -21,6 +21,7 @@
 #define NAV_SPC   LT(MO(_NAV),KC_SPC)  
 #define SYM_BSP   LT(MO(_SYM),KC_BSPC)
 #define MOU_ENT   LT(MO(_MOUSE),KC_ENT)
+#define MOU_TAB   LT(MO(_MOUSE),KC_TAB)
 // #define TOG_SYM   layer_invert(_SYM)
 // #define TOG_NAV   layer_invert(_NAV)
 

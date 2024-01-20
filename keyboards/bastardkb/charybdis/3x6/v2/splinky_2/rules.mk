@@ -22,3 +22,6 @@ POINTING_DEVICE_ENABLE = yes # Enable trackball
 POINTING_DEVICE_DRIVER = pmw3360
 
 SERIAL_DRIVER = vendor
+
+COMBO_ENABLE = yes
+VPATH += keyboards/gboards/
