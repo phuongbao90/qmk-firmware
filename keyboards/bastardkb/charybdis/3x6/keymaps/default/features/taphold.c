@@ -27,6 +27,8 @@ bool tap_hold_process_record_user(uint16_t keycode, keyrecord_t *record) {
         case KC_C:    return handle_tap_hold(keycode, record, 200);
         case KC_V:    return handle_tap_hold(keycode, record, 200);
         case PARENS:  return handle_tap_hold(keycode, record, 200);
+        case KC_P2:   return handle_tap_hold(keycode, record, 150);
+        case KC_P3:   return handle_tap_hold(keycode, record, 150);
         // case NAV_SPC: return handle_tap_hold(keycode, record, 150);
         // case SYM_BSP: return handle_tap_hold(keycode, record, 150);
         // case AT_HASH: return handle_tap_hold(keycode, record, 150);
@@ -42,6 +44,8 @@ void tap_hold_matrix_scan_user(void) {
         else if (tap_hold_held_key == KC_C)     tap_code16(LCMD(KC_C));
         else if (tap_hold_held_key == KC_V)     tap_code16(LCMD(KC_V));
         else if (tap_hold_held_key == PARENS)   tap_code16(KC_RPRN);
+        else if (tap_hold_held_key == KC_P2)    tap_code16(KC_DOT);
+        else if (tap_hold_held_key == KC_P3)    tap_code16(KC_COMMA);
         // else if (tap_hold_held_key == NAV_SPC)  layer_invert(_NAV);
         // else if (tap_hold_held_key == SYM_BSP)  layer_invert(_SYM);
         // else if (tap_hold_held_key == AT_HASH)  tap_code16(KC_HASH);

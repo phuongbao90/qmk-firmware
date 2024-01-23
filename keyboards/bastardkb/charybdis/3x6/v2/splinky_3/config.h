@@ -50,6 +50,7 @@
     #undef TAPPING_TERM      
 #endif                       
 #define TAPPING_TERM 150     
+#define TAPPING_TERM_PER_KEY
 
 // #define MOUSEKEY_MAX_SPEED 5
 // #define MOUSEKEY_MOVE_DELTA 5

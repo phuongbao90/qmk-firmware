@@ -90,6 +90,15 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     return true;
 }
 
+
+void general_matrix_scan_tasks(void) {
+    tap_hold_matrix_scan_user();
+    one_shot_matrix_scan_user();
+    // Add other general matrix scan tasks here
+}
+
+/* -------------------------------------------------------------------------- */
+/** \brief Automatically enable sniping-mode on the pointer layer. */
 #ifdef POINTING_DEVICE_ENABLE
 #    ifdef CHARYBDIS_AUTO_POINTER_LAYER_TRIGGER_ENABLE
 report_mouse_t pointing_device_task_user(report_mouse_t mouse_report) {
@@ -102,7 +111,7 @@ report_mouse_t pointing_device_task_user(report_mouse_t mouse_report) {
     return mouse_report;
 }
 
-void matrix_scan_user(void) {
+void pointer_layer_scan_tasks(void) {
     if (auto_pointer_layer_timer != 0 && TIMER_DIFF_16(timer_read(), auto_pointer_layer_timer) >= CHARYBDIS_AUTO_POINTER_LAYER_TRIGGER_TIMEOUT_MS) {
         auto_pointer_layer_timer = 0;
         layer_off(LAYER_POINTER);
@@ -119,5 +128,7 @@ layer_state_t layer_state_set_user(layer_state_t state) {
 #endif     // POINTING_DEVICE_ENABLE
 
 
-
-
+void matrix_scan_user(void) {
+    general_matrix_scan_tasks();
+    pointer_layer_scan_tasks();
+}
