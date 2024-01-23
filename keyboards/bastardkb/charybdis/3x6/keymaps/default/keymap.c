@@ -23,71 +23,72 @@ static uint16_t auto_pointer_layer_timer = 0;
 #    endif // CHARYBDIS_AUTO_POINTER_LAYER_TRIGGER_TIMEOUT_MS
 
 #    ifndef CHARYBDIS_AUTO_POINTER_LAYER_TRIGGER_THRESHOLD
-#        define CHARYBDIS_AUTO_POINTER_LAYER_TRIGGER_THRESHOLD 1
+#        define CHARYBDIS_AUTO_POINTER_LAYER_TRIGGER_THRESHOLD 2
 #    endif // CHARYBDIS_AUTO_POINTER_LAYER_TRIGGER_THRESHOLD
 #endif     // CHARYBDIS_AUTO_POINTER_LAYER_TRIGGER_ENABLE
 
 /* -------------------------------------------------------------------------- */
 
-enum charybdis_keymap_layers {
-    LAYER_BASE = 0,
-    LAYER_LOWER,
-    LAYER_RAISE,
-    LAYER_POINTER
-};
 
-#define _______________DEAD_HALF_ROW_______________ XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX
-#define ______________HOME_ROW_GACS_L______________ XXXXXXX, KC_LCTL, KC_LOPT, KC_LCMD, KC_LSFT, KC_HYPR
-#define ______________HOME_ROW_GACS_R______________ KC_HYPR, KC_LSFT, KC_LCMD, KC_LOPT, KC_LCTL, XXXXXXX
-#define LOWER MO(LAYER_LOWER)
-#define RAISE MO(LAYER_RAISE)
 
 // clang-format off
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   [_COLEMAK] = LAYOUT(
-       XXXXXXX,     Q_ESC,       KC_W,       KC_F,       KC_P,         KC_B,                   KC_J,        KC_L,       KC_U,        KC_Y,       KC_SCLN,    XXXXXXX,    
+       QK_BOOT,     Q_ESC,       KC_W,       KC_F,       KC_P,         KC_B,                   KC_J,        KC_L,       RCMD_U,      KC_Y,       KC_SCLN,    QK_BOOT,    
        XXXXXXX,     CTL_A,       ALT_R,      GUI_S,      SHT_T,        HYP_G,                  HYP_M,       SHT_N,      GUI_E,       ALT_I,      CTL_O,      XXXXXXX,    
-       QK_BOOT,     KC_Z,        KC_X,       KC_C,       NUM_D,        KC_V,                   KC_K,        RCMD_H,     KC_COMM,     KC_DOT,     KC_SLSH,    QK_BOOT,    
-                                                       SYM_BSP,    NAV_SPC,    MO(_MOUSE),     MOU_ENT,     MOU_TAB
+       XXXXXXX,     KC_Z,        KC_X,       KC_C,       NUM_D,        KC_V,                   KC_K,        NUM_H,      KC_COMM,     KC_DOT,     KC_SLSH,    XXXXXXX,    
+                                                       SYM_BSP,    NAV_SPC,    XXXXXXX,        KC_ENT,     SHT_TAB
   ),
   [_NAV] = LAYOUT(
        XXXXXXX,     KC_ESC,     XXXXXXX,    XXXXXXX,     XXXXXXX,       XXXXXXX,               KC_PGUP,     C(KC_LEFT), KC_UP,       C(KC_RIGHT), KC_HOME,    XXXXXXX,
        XXXXXXX,     KC_LCTL,    KC_LOPT,    KC_LCMD,     KC_LSFT,       KC_HYPR,               KC_PGDN,     KC_LEFT,    KC_DOWN,     KC_RGHT,     KC_END,     XXXXXXX,
        XXXXXXX,     CTL_SFT,    OPT_SFT,    CMD_SFT,     XXXXXXX,       XXXXXXX,               G(KC_LBRC),  G(KC_RBRC), LAG(KC_LEFT),LAG(KC_RGHT),XXXXXXX,    XXXXXXX,
-                                                       _______,     TG(_NAV),   XXXXXXX,       _______,     TG(_NAV)
+                                                       _______,     TG(_NAV),   XXXXXXX,       _______,     KC_RSFT
   ),
   [_SYM] = LAYOUT(
-       XXXXXXX,     KC_GRV,     XXXXXXX,    XXXXXXX,     XXXXXXX,       XXXXXXX,               KC_MINUS,    KC_EXLM,    KC_LBRC,     KC_RBRC,     KC_SCLN,    XXXXXXX,
-       XXXXXXX,     XXXXXXX,    XXXXXXX,    KC_AT,       KC_HASH,       XXXXXXX,               KC_EQUAL,    KC_AMPR,    KC_LPRN,     KC_RPRN,     KC_QUOT,    XXXXXXX,
-       XXXXXXX,     XXXXXXX,    XXXXXXX,    KC_PERC,     KC_ASTR,       KC_CIRC,               KC_BSLS,     KC_DOLLAR,  KC_COMM,     KC_DOT,      KC_SLSH,    XXXXXXX,
-                                                       _______,     _______,    XXXXXXX,       _______,     TG(_SYM)
+       XXXXXXX,     KC_EXLM,    KC_AT,      KC_HASH,     KC_DOLLAR,     KC_PERC,               KC_PAST,     KC_GRV,     KC_DOLLAR,   KC_PIPE,     KC_PPLS,    XXXXXXX,
+       XXXXXXX,     KC_LCTL,    KC_LOPT,    KC_LCMD,     KC_LSFT,       KC_CIRC,               KC_EQUAL,    KC_LPRN,    KC_LCBR,     KC_LBRC,     KC_PMNS,    XXXXXXX,
+       XXXXXXX,     XXXXXXX,    XXXXXXX,    XXXXXXX,     KC_BSLS,       KC_AMPR,               KC_TILD,     KC_RPRN,    KC_RCBR,     KC_RBRC,     LSFT(KC_MINS),XXXXXXX,
+                                                       XXXXXXX,     XXXXXXX,     XXXXXXX,      XXXXXXX,     KC_RSFT // one-shot shift
   ),
+//   [_SYM] = LAYOUT(
+//        XXXXXXX,     KC_GRV,     XXXXXXX,    XXXXXXX,     XXXXXXX,       XXXXXXX,               KC_MINUS,    KC_EXLM,    KC_LBRC,     KC_RBRC,     KC_SCLN,    XXXXXXX,
+//        XXXXXXX,     XXXXXXX,    XXXXXXX,    KC_AT,       KC_HASH,       XXXXXXX,               KC_EQUAL,    KC_AMPR,    KC_LPRN,     KC_RPRN,     KC_QUOT,    XXXXXXX,
+//        XXXXXXX,     XXXXXXX,    XXXXXXX,    KC_PERC,     KC_ASTR,       KC_CIRC,               KC_BSLS,     KC_DOLLAR,  KC_COMM,     KC_DOT,      KC_SLSH,    XXXXXXX,
+//                                                        _______,     _______,    XXXXXXX,       _______,     TG(_SYM)
+//   ),
   [_NUM] = LAYOUT(
-       XXXXXXX,     XXXXXXX,    XXXXXXX,    XXXXXXX,     XXXXXXX,       XXXXXXX,               KC_MINUS,    KC_7,       KC_8,        KC_9,        KC_PPLS,    XXXXXXX,
-       XXXXXXX,     KC_F1,      KC_F12,     XXXXXXX,     XXXXXXX,       XXXXXXX,               KC_EQUAL,    KC_4,       KC_5,        KC_6,        KC_MINUS,   XXXXXXX,
-       XXXXXXX,     XXXXXXX,    XXXXXXX,    XXXXXXX,     XXXXXXX,       XXXXXXX,               KC_0,        KC_1,       KC_2,        KC_3,        KC_SLSH,    XXXXXXX,
-                                                       _______,     _______,    XXXXXXX,       KC_COMMA,    KC_DOT
+       XXXXXXX,     KC_F7  ,    KC_F8  ,    KC_F9  ,     KC_F12 ,       XXXXXXX,               KC_PAST,     KC_7,       KC_8,        KC_9,        KC_PPLS,    XXXXXXX,
+       XXXXXXX,     KC_F4,      KC_F5 ,     KC_F6  ,     KC_F11 ,       XXXXXXX,               KC_EQUAL,    KC_4,       KC_5,        KC_6,        KC_PMNS,    XXXXXXX,
+       XXXXXXX,     KC_F1,      KC_F2  ,    KC_F3  ,     KC_F10 ,       XXXXXXX,               KC_0,        KC_1,       KC_P2,       KC_P3,       LSFT(KC_MINS),XXXXXXX,
+                                                       _______,     _______,    XXXXXXX,       KC_COMMA,    KC_RSFT
   ),
     [LAYER_POINTER] = LAYOUT(
   // ╭──────────────────────────────────────────────────────╮ ╭──────────────────────────────────────────────────────╮
-       XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, DPI_MOD, S_D_MOD,    S_D_MOD, DPI_MOD, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
+       XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, DPI_MOD, S_D_MOD,    XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
   // ├──────────────────────────────────────────────────────┤ ├──────────────────────────────────────────────────────┤
-       XXXXXXX, KC_LGUI, KC_LALT, KC_LCTL, KC_LSFT, XXXXXXX,    XXXXXXX, KC_RSFT, KC_RCTL, KC_RALT, KC_RGUI, XXXXXXX,
+       XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,    XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
   // ├──────────────────────────────────────────────────────┤ ├──────────────────────────────────────────────────────┤
-       XXXXXXX, _______, DRGSCRL, SNIPING, XXXXXXX, XXXXXXX,    XXXXXXX, XXXXXXX, SNIPING, DRGSCRL, _______, XXXXXXX,
+       XXXXXXX, _______, DRGSCRL, SNIPING, XXXXXXX, XXXXXXX,    XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, _______, XXXXXXX,
   // ╰──────────────────────────────────────────────────────┤ ├──────────────────────────────────────────────────────╯
-                                  KC_BTN2, KC_BTN1, KC_BTN3,    KC_BTN3, KC_BTN1
+                                  KC_BTN2, KC_BTN1, KC_BTN3,    XXXXXXX, XXXXXXX
   //                            ╰───────────────────────────╯ ╰──────────────────╯
   ),
 };
-// clang-format on
+// clang-format 
 
 // ┌────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┐
 // │ P R O C E S S _ R E C O R D _ U S E R                                                                                                                               │
 // └────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘
 // ▝▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▘
+bool process_record_user(uint16_t keycode, keyrecord_t *record) {
+    if (!tap_hold_process_record_user(keycode, record)) return false;
+    if (!one_shot_process_record_user(keycode, record)) return false;
+    if (!custom_keys_process_record_user(keycode, record)) return false;
 
+    return true;
+}
 
 #ifdef POINTING_DEVICE_ENABLE
 #    ifdef CHARYBDIS_AUTO_POINTER_LAYER_TRIGGER_ENABLE
@@ -117,10 +118,6 @@ layer_state_t layer_state_set_user(layer_state_t state) {
 #    endif // CHARYBDIS_AUTO_SNIPING_ON_LAYER
 #endif     // POINTING_DEVICE_ENABLE
 
-bool process_record_user(uint16_t keycode, keyrecord_t *record) {
-    if (!tap_hold_process_record_user(keycode, record)) return false;
-    if (!one_shot_process_record_user(keycode, record)) return false;
-    if (!custom_keys_process_record_user(keycode, record)) return false;
 
-    return true;
-}
+
+

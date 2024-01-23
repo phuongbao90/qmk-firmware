@@ -5,7 +5,8 @@ typedef enum {
     _NAV,
     _SYM,
     _NUM,
-    _MOUSE,
-    _QWERTY,
+    LAYER_POINTER
+    // _MOUSE,
+    // _QWERTY,
 } layers_t;
            
