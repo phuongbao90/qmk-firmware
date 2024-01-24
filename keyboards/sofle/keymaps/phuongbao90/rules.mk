@@ -14,7 +14,7 @@ ENCODER_ENABLE = yes
 OLED_ENABLE = no    
 OLED_DRIVER = SSD1306
 CONSOLE_ENABLE = yes
-VIA_ENABLE = yes    
+VIA_ENABLE = no    
 RGBLIGHT_ENABLE = no
 MOUSEKEY_ENABLE = yes
                     

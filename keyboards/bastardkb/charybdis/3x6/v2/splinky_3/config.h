@@ -49,11 +49,13 @@
 #ifdef TAPPING_TERM          
     #undef TAPPING_TERM      
 #endif                       
-#define TAPPING_TERM 150     
-#define TAPPING_TERM_PER_KEY
+#define TAPPING_TERM 200
+#define QUICK_TAP_TERM 0
+// #define TAPPING_TERM_PER_KEY
 
 // #define MOUSEKEY_MAX_SPEED 5
 // #define MOUSEKEY_MOVE_DELTA 5
+// #define TAPPING_FORCE_HOLD
 #define NO_AUTO_SHIFT_ALPHA
 
 // #define PMW33XX_CPI 2200

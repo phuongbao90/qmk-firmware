@@ -14,12 +14,13 @@ NKRO_ENABLE = yes            # Enable N-Key Rollover
 BACKLIGHT_ENABLE = no       # Enable keyboard backlight functionality
 RGBLIGHT_ENABLE = no        # Enable keyboard RGB underglow
 AUDIO_ENABLE = no           # Audio output
+KEY_OVERRIDE_ENABLE = no
 
 LTO_ENABLE = yes
 COMBO_ENABLE = yes
 CAPS_WORD_ENABLE = yes
 AUTO_SHIFT_ENABLE = yes
-REPEAT_KEY_ENABLE = yes
+REPEAT_KEY_ENABLE = no
 VPATH += keyboards/gboards/
 
 AUDIO_SUPPORTED = no        # Audio is not supported
@@ -33,5 +34,5 @@ POINTING_DEVICE_ENABLE = yes # Enable trackball
 POINTING_DEVICE_DRIVER = pmw3360
 
 SERIAL_DRIVER = vendor
-WS2812_DRIVER = vendor
+# WS2812_DRIVER = vendor
 

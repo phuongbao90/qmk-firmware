@@ -15,7 +15,7 @@
 #define ALT_I     OPT_T(KC_I)
 #define CTL_O     CTL_T(KC_O)
 #define HYP_M     HYPR_T(KC_M)
-#define RCMD_H    RCMD_T(KC_H)
+#define RCMD_K    RCMD_T(KC_K)
 
 // LAYERKEYS ├───────────────────────────────────────┐
 #define NAV_SPC   LT(MO(_NAV),KC_SPC)  
@@ -26,6 +26,7 @@
 
 #define VNI_TAB   LT(MO(_VNI),KC_TAB)
 #define NUM_D     LT(MO(_NUM),KC_D)
+#define NUM_H     LT(_NUM,KC_H)
 #define NUM_ENT   LT(MO(_VNI),KC_ENT)
 
 // TAP HOLD
