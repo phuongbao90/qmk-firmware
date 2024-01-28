@@ -20,14 +20,14 @@
 #define ROW4_LEFT_NAV          KC_ESC,          XXXXXXX,            XXXXXXX,     XXXXXXX,       XXXXXXX
 #define ROW3_LEFT_NAV          KC_LCTL,         KC_LOPT,            KC_LCMD,     KC_LSFT,       KC_HYPR
 #define ROW3_LEFT_NAV_KLOR     KC_LCTL,         KC_LOPT,            KC_LCMD,     SAFE_SHIFT,    KC_HYPR
+
 #define ROW2_LEFT_NAV          CTL_SFT,         OPT_SFT,            CMD_SFT,     XXXXXXX,       XXXXXXX
-#define ROW1_LEFT_NAV          TG(_NAV),        XXXXXXX
+#define ROW1_LEFT_NAV          XXXXXXX,         XXXXXXX
 
 #define ROW4_RGHT_NAV          KC_PGUP,         C(KC_LEFT),         KC_UP,       C(KC_RIGHT),   KC_HOME
 #define ROW3_RGHT_NAV          KC_PGDN,         KC_LEFT,            KC_DOWN,     KC_RGHT,       KC_END
 #define ROW2_RGHT_NAV          G(KC_LBRC),      G(KC_RBRC),         LAG(KC_LEFT),LAG(KC_RGHT),XXXXXXX
 #define ROW1_RGHT_NAV          _______,         KC_RSFT
-
 
 /* --------------------------------- symbol --------------------------------- */
 

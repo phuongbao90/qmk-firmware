@@ -1,4 +1,5 @@
 SRC += phuongbao90.c
+SRC += features/achordion.c
 VPATH += keyboards/gboards/
 VPATH += combos.def
 

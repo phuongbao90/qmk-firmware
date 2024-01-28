@@ -66,7 +66,8 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 // │ r g b   l e d s                                 │
 // └─────────────────────────────────────────────────┘ 
 
-#define RGB_DI_PIN D3
+// #define RGB_DI_PIN D3
+#define WS218_DI_PIN D3
 #define RGBLED_NUM 42
 #define RGBLED_SPLIT { 21, 21 }
 #define RGB_MATRIX_LED_COUNT RGBLED_NUM

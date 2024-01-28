@@ -4,6 +4,7 @@
 #include "klor.h"
 #include "g/keymap_combo.h"
 #include "phuongbao90.h"
+// #include "features/achordion.h"
 
 // ┌────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┐
 // │ K E Y M A P S                                                                                                                              │
@@ -57,6 +58,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     if (!tap_hold_process_record_user(keycode, record)) return false;
     // if (!one_shot_process_record_user(keycode, record)) return false;
     if (!custom_keys_process_record_user(keycode, record)) return false;
+    // if (!process_achordion(keycode, record)) { return false; }
 
     return true;
 }
@@ -67,56 +69,9 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 // ▝▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▘
 void matrix_scan_user(void) {
   tap_hold_matrix_scan_user();
+//   achordion_task();
 //   one_shot_matrix_scan_user();
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 // ┌────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┐
 // │ O L E D                                                                                                                                    │

@@ -11,7 +11,7 @@
     #undef TAPPING_TERM      
 #endif                       
 #define TAPPING_TERM 150
-#define QUICK_TAP_TERM 0
+#define QUICK_TAP_TERM_PER_KEY
 
 #define NO_AUTO_SHIFT_ALPHA
 #define NO_ACTION_MACRO
