@@ -1,8 +1,9 @@
 #pragma once
 
+#define SIX_XXX  _______, _______, _______, _______, _______
 #define FIVE_XX  _______, _______, _______, _______, _______
 #define FOUR_XX  _______, _______, _______, _______
-#define THREE_X _______, _______, _______
+#define THREE_X  _______, _______, _______
 
 /* --------------------------------- colemak -------------------------------- */
 
@@ -54,12 +55,20 @@
 #define ROW2_RGHT_NUM          KC_0,            KC_1,               KC_P2,       KC_P3,         KC_MINS
 #define ROW1_RGHT_NUM          KC_COMMA,        KC_RSFT
 
+/* ------------------------------ LAYER_POINTER ----------------------------- */
+#define ROW4_LEFT_POINT        XXXXXXX,         XXXXXXX,            XXXXXXX,     XXXXXXX,       XXXXXXX
+#define ROW3_LEFT_POINT        XXXXXXX,         XXXXXXX,            XXXXXXX,     XXXXXXX,       XXXXXXX
+#define ROW2_LEFT_POINT        XXXXXXX,         XXXXXXX,            XXXXXXX,     XXXXXXX,       XXXXXXX
+#define ROW1_LEFT_POINT        KC_BTN2,         KC_BTN1,            KC_BTN3
 
-#define ROW1_LEFT_COLEMAK_CHA     _______,  SYM_BSP,  NAV_SPC
-#define ROW1_RGHT_COLEMAK_CHA     KC_ENT,   SHT_TAB
+#define ROW4_RGHT_POINT        XXXXXXX,         XXXXXXX,            XXXXXXX,     XXXXXXX,       XXXXXXX
+#define ROW3_RGHT_POINT        XXXXXXX,         XXXXXXX,            XXXXXXX,     XXXXXXX,       XXXXXXX
+#define ROW2_RGHT_POINT        XXXXXXX,         XXXXXXX,            XXXXXXX,     XXXXXXX,       XXXXXXX
+#define ROW1_RGHT_POINT        XXXXXXX,         XXXXXXX
+
+
+#define ROW1_LEFT_COLEMAK_CHA     SYM_BSP,  NAV_SPC,  _______
 #define ROW1_LEFT_NAV_CHA_CHA     _______,  _______,  _______
-#define ROW1_RGHT_NAV_CHA_CHA     KC_EQL,   _______
 #define ROW1_LEFT_SYM_CHA_CHA     _______,  _______,  _______
-#define ROW1_RGHT_SYM_CHA_CHA     KC_EQL,   _______
 #define ROW1_LEFT_NUM_CHA_CHA     _______,  _______,  _______
-#define ROW1_RGHT_NUM_CHA_CHA     _______,  _______
+

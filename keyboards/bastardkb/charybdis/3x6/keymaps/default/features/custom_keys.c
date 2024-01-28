@@ -1,25 +1,14 @@
+#include "custom_keys.h"
+
 enum custom_keycodes {
-    TOG_SYM = SAFE_RANGE,
-    TOG_NAV,
-    CTL_SFT,
+    CTL_SFT = SAFE_RANGE,
     OPT_SFT,
     CMD_SFT,
-    // ... your other custom keycodes
+    SAFE_SHIFT
 };
 
 bool custom_keys_process_record_user(uint16_t keycode, keyrecord_t *record) {
     switch (keycode) {
-        case TOG_SYM:
-            if (record->event.pressed) {
-                layer_invert(_SYM);
-            }
-            return false;
-        case TOG_NAV:
-            if (record->event.pressed) {
-                layer_invert(_NAV);
-            }
-            return false;
-
         case CTL_SFT: 
             if (record->event.pressed) {
                 register_code(KC_LCTL);
@@ -44,6 +33,14 @@ bool custom_keys_process_record_user(uint16_t keycode, keyrecord_t *record) {
                 register_code(KC_LSFT);
             } else {
                 unregister_code(KC_LCMD);
+                unregister_code(KC_LSFT);
+            }
+            return false;
+        case SAFE_SHIFT:
+            if (record->event.pressed) {
+                unregister_code(KC_LCMD);
+                register_code(KC_LSFT);
+            } else {
                 unregister_code(KC_LSFT);
             }
             return false;

@@ -2,7 +2,6 @@
 #include "features/key_modifiers.h"
 
 #include QMK_KEYBOARD_H
-// #include "g/keymap_engine.h"
 #include "g/keymap_combo.h"
 #include <stdio.h>
 #include <string.h>
@@ -35,7 +34,7 @@ static uint16_t auto_pointer_layer_timer = 0;
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   [_COLEMAK] = LAYOUT(
-       QK_BOOT,     Q_ESC,       KC_W,       KC_F,       KC_P,         KC_B,                   KC_J,        KC_L,       RCMD_U,      KC_Y,       KC_SCLN,    QK_BOOT,    
+       XXXXXXX,     KC_Q,       KC_W,       KC_F,       KC_P,         KC_B,                   KC_J,        KC_L,       KC_U,        KC_Y,       KC_SCLN,    QK_BOOT,    
        XXXXXXX,     CTL_A,       ALT_R,      GUI_S,      SHT_T,        HYP_G,                  HYP_M,       SHT_N,      GUI_E,       ALT_I,      CTL_O,      XXXXXXX,    
        XXXXXXX,     KC_Z,        KC_X,       KC_C,       NUM_D,        KC_V,                   KC_K,        NUM_H,      KC_COMM,     KC_DOT,     KC_SLSH,    XXXXXXX,    
                                                        SYM_BSP,    NAV_SPC,    XXXXXXX,        KC_ENT,     SHT_TAB
@@ -84,7 +83,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 // ▝▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▘
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     if (!tap_hold_process_record_user(keycode, record)) return false;
-    if (!one_shot_process_record_user(keycode, record)) return false;
+    // if (!one_shot_process_record_user(keycode, record)) return false;
     if (!custom_keys_process_record_user(keycode, record)) return false;
 
     return true;
@@ -93,7 +92,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 
 void general_matrix_scan_tasks(void) {
     tap_hold_matrix_scan_user();
-    one_shot_matrix_scan_user();
+    // one_shot_matrix_scan_user();
     // Add other general matrix scan tasks here
 }
 
