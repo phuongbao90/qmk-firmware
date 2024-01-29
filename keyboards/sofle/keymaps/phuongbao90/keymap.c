@@ -38,6 +38,13 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     XXXXXXX,     ROW2_LEFT_NUM,   XXXXXXX,      XXXXXXX,    ROW2_RGHT_NUM,         XXXXXXX,
     THREE_X,     ROW1_LEFT_NUM,                             ROW1_RGHT_NUM,         THREE_X
 ),
+[LAYER_POINTER] = LAYOUT_wrapper(
+    XXXXXXX,     FIVE_XX,                                   FIVE_XX,               XXXXXXX,
+    XXXXXXX,     ROW4_LEFT_MOUSE,                             ROW4_RGHT_MOUSE,         XXXXXXX,
+    XXXXXXX,     ROW3_LEFT_MOUSE,                             ROW3_RGHT_MOUSE,         XXXXXXX,
+    XXXXXXX,     ROW2_LEFT_MOUSE,   XXXXXXX,      XXXXXXX,    ROW2_RGHT_MOUSE,         XXXXXXX,
+    THREE_X,     ROW1_LEFT_MOUSE,                             ROW1_RGHT_MOUSE,         THREE_X
+),
 };
 
 
@@ -50,6 +57,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     if (!tap_hold_process_record_user(keycode, record)) return false;
     // if (!one_shot_process_record_user(keycode, record)) return false;
     if (!custom_keys_process_record_user(keycode, record)) return false;
+    if (!process_orbital_mouse(keycode, record)) { return false; }
 
     return true;
 }
@@ -62,6 +70,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 
 void matrix_scan_user(void) {
   tap_hold_matrix_scan_user();
+  orbital_mouse_task();
   // one_shot_matrix_scan_user();
 }
 

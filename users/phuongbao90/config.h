@@ -12,6 +12,7 @@
 #endif                       
 #define TAPPING_TERM 150
 #define QUICK_TAP_TERM_PER_KEY
+#define BILATERAL_COMBINATIONS
 
 #define NO_AUTO_SHIFT_ALPHA
 #define NO_ACTION_MACRO

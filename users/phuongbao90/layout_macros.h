@@ -15,7 +15,7 @@
 #define ROW4_RGHT_COLEMAK      KC_J,            KC_L,               KC_U,        KC_Y,          KC_SCLN
 #define ROW3_RGHT_COLEMAK      HYP_M,           SHT_N,              GUI_E,       ALT_I,         CTL_O
 #define ROW2_RGHT_COLEMAK      RCMD_K,          NUM_H,              KC_COMM,     KC_DOT,        KC_SLSH
-#define ROW1_RGHT_COLEMAK      KC_ENT,          SHT_TAB
+#define ROW1_RGHT_COLEMAK      MOU_ENT,         SHT_TAB
 
 /* ------------------------------- navigation ------------------------------- */
 
@@ -52,20 +52,21 @@
 
 #define ROW4_RGHT_NUM          KC_PAST,         KC_7,               KC_8,        KC_9,          KC_PPLS
 #define ROW3_RGHT_NUM          KC_EQUAL,        KC_4,               KC_5,        KC_6,          KC_QUOT
-#define ROW2_RGHT_NUM          KC_0,            KC_1,               KC_P2,       KC_P3,         KC_MINS
+#define ROW2_RGHT_NUM          KC_0,            KC_1,               KC_2,        KC_3,          KC_MINS
 #define ROW1_RGHT_NUM          KC_COMMA,        KC_RSFT
 
-/* ------------------------------ LAYER_POINTER ----------------------------- */
-#define ROW4_LEFT_POINT        XXXXXXX,         XXXXXXX,            XXXXXXX,     XXXXXXX,       XXXXXXX
-#define ROW3_LEFT_POINT        XXXXXXX,         XXXXXXX,            XXXXXXX,     XXXXXXX,       XXXXXXX
-#define ROW2_LEFT_POINT        XXXXXXX,         XXXXXXX,            XXXXXXX,     XXXXXXX,       XXXXXXX
-#define ROW1_LEFT_POINT        KC_BTN2,         KC_BTN1,            KC_BTN3
+/* ------------------------------ LAYER_MOUSE ----------------------------- */
+#define ROW4_LEFT_MOUSE        XXXXXXX,         XXXXXXX,            XXXXXXX,     XXXXXXX,       XXXXXXX
+#define ROW3_LEFT_MOUSE        XXXXXXX,         XXXXXXX,            XXXXXXX,     XXXXXXX,       XXXXXXX
+#define ROW2_LEFT_MOUSE        XXXXXXX,         XXXXXXX,            XXXXXXX,     XXXXXXX,       XXXXXXX
+#define ROW1_LEFT_MOUSE        KC_BTN2,         KC_BTN1
 
-#define ROW4_RGHT_POINT        XXXXXXX,         XXXXXXX,            XXXXXXX,     XXXXXXX,       XXXXXXX
-#define ROW3_RGHT_POINT        XXXXXXX,         XXXXXXX,            XXXXXXX,     XXXXXXX,       XXXXXXX
-#define ROW2_RGHT_POINT        XXXXXXX,         XXXXXXX,            XXXXXXX,     XXXXXXX,       XXXXXXX
-#define ROW1_RGHT_POINT        XXXXXXX,         XXXXXXX
+#define ROW4_RGHT_MOUSE        OM_DBLS,         OM_BTNS,            OM_U   ,     OM_BTN2,       OM_SEL1
+#define ROW3_RGHT_MOUSE        OM_HLDS,         OM_L   ,            OM_D   ,     OM_R   ,       OM_SEL2
+#define ROW2_RGHT_MOUSE        OM_RELS,         OM_W_D ,            OM_W_U ,     OM_BTN3,       OM_SEL3
+#define ROW1_RGHT_MOUSE        XXXXXXX,         XXXXXXX
 
+#define ROW1_LEFT_MOUSE_CHA       KC_BTN2,  KC_BTN1,  KC_BTN3
 
 #define ROW1_LEFT_COLEMAK_CHA     SYM_BSP,  NAV_SPC,  _______
 #define ROW1_LEFT_NAV_CHA_CHA     _______,  _______,  _______

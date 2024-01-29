@@ -26,9 +26,8 @@ static uint16_t auto_pointer_layer_timer = 0;
 /* -------------------------------------------------------------------------- */
 // clang-format off
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
-
   [_COLEMAK] = LAYOUT_wrapper(
-        XXXXXXX,      ROW4_LEFT_COLEMAK,           ROW4_RGHT_COLEMAK,     XXXXXXX,
+        QK_BOOT,      ROW4_LEFT_COLEMAK,           ROW4_RGHT_COLEMAK,     QK_BOOT,
         XXXXXXX,      ROW3_LEFT_COLEMAK,           ROW3_RGHT_COLEMAK,     XXXXXXX,
         XXXXXXX,      ROW2_LEFT_COLEMAK,           ROW2_RGHT_COLEMAK,     XXXXXXX,
                       ROW1_LEFT_COLEMAK_CHA,       ROW1_RGHT_COLEMAK
@@ -52,10 +51,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                       ROW1_LEFT_NUM_CHA_CHA,       ROW1_RGHT_NUM
   ),
   [LAYER_POINTER] = LAYOUT_wrapper(
-        XXXXXXX,      ROW4_LEFT_POINT,             ROW4_RGHT_POINT,       XXXXXXX,
-        XXXXXXX,      ROW3_LEFT_POINT,             ROW3_RGHT_POINT,       XXXXXXX,
-        XXXXXXX,      ROW2_LEFT_POINT,             ROW2_RGHT_POINT,       XXXXXXX,
-                      ROW1_LEFT_POINT,             ROW1_RGHT_POINT
+        XXXXXXX,      ROW4_LEFT_MOUSE,             ROW4_RGHT_MOUSE,       XXXXXXX,
+        XXXXXXX,      ROW3_LEFT_MOUSE,             ROW3_RGHT_MOUSE,       XXXXXXX,
+        XXXXXXX,      ROW2_LEFT_MOUSE,             ROW2_RGHT_MOUSE,       XXXXXXX,
+                      ROW1_LEFT_MOUSE_CHA,         ROW1_RGHT_MOUSE
   ),
 };
 // clang-format 
@@ -68,6 +67,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     if (!tap_hold_process_record_user(keycode, record)) return false;
     // if (!one_shot_process_record_user(keycode, record)) return false;
     if (!custom_keys_process_record_user(keycode, record)) return false;
+    if (!process_orbital_mouse(keycode, record)) { return false; }
 
     return true;
 }
@@ -75,6 +75,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 
 void general_matrix_scan_tasks(void) {
     tap_hold_matrix_scan_user();
+    orbital_mouse_task();
     // one_shot_matrix_scan_user();
     // Add other general matrix scan tasks here
 }

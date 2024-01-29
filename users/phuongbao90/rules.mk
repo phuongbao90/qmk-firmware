@@ -1,7 +1,12 @@
 SRC += phuongbao90.c
-# SRC += features/achordion.c
+SRC += features/orbital_mouse.c
+SRC += features/one_shot.c
+SRC += features/custom_keys.c
+SRC += features/taphold.c
+
 VPATH += keyboards/gboards/
 VPATH += combos.def
+
 
 # RP2040-specific options
 # ALLOW_WARNINGS = yes
@@ -17,6 +22,7 @@ AUTO_SHIFT_ENABLE = yes
 NKRO_ENABLE = yes
 LTO_ENABLE = yes
 PERMISSIVE_HOLD = yes
+MOUSE_ENABLE = yes
 
 REPEAT_KEY_ENABLE = no
 EXTRAKEY_ENABLE = no
