@@ -7,7 +7,15 @@
 #include "features/taphold.h" 
 #include "features/orbital_mouse.h"
 #include "features/one_shot.h"
-           
+
+#ifdef ENCODER_ENABLE
+#    include "features/encoder.h"
+#endif
+
+#ifdef TAP_DANCE_ENABLE
+  #include "features/tap_dances.h"
+#endif
+
 typedef enum {
     _COLEMAK,
     _NAV,
@@ -15,5 +23,3 @@ typedef enum {
     _NUM,
     LAYER_POINTER
 } layers_t;
-
-

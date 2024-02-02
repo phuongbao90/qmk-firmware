@@ -28,8 +28,8 @@ static uint16_t auto_pointer_layer_timer = 0;
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [_COLEMAK] = LAYOUT_wrapper(
         QK_BOOT,      ROW4_LEFT_COLEMAK,           ROW4_RGHT_COLEMAK,     QK_BOOT,
-        XXXXXXX,      ROW3_LEFT_COLEMAK,           ROW3_RGHT_COLEMAK,     XXXXXXX,
-        XXXXXXX,      ROW2_LEFT_COLEMAK,           ROW2_RGHT_COLEMAK,     XXXXXXX,
+        KC_LEFT,      ROW3_LEFT_COLEMAK,           ROW3_RGHT_COLEMAK,     KC_UP,
+        KC_RGHT,      ROW2_LEFT_COLEMAK,           ROW2_RGHT_COLEMAK,     KC_DOWN,
                       ROW1_LEFT_COLEMAK_CHA,       ROW1_RGHT_COLEMAK
   ),
   [_NAV] = LAYOUT_wrapper(

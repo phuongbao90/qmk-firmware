@@ -39,7 +39,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     THREE_X,     ROW1_LEFT_NUM,                             ROW1_RGHT_NUM,         THREE_X
 ),
 [LAYER_POINTER] = LAYOUT_wrapper(
-    XXXXXXX,     FIVE_XX,                                   FIVE_XX,               XXXXXXX,
+    XXXXXXX,     FIVE_XX,                                     FIVE_XX,               XXXXXXX,
     XXXXXXX,     ROW4_LEFT_MOUSE,                             ROW4_RGHT_MOUSE,         XXXXXXX,
     XXXXXXX,     ROW3_LEFT_MOUSE,                             ROW3_RGHT_MOUSE,         XXXXXXX,
     XXXXXXX,     ROW2_LEFT_MOUSE,   XXXXXXX,      XXXXXXX,    ROW2_RGHT_MOUSE,         XXXXXXX,
