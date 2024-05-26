@@ -10,7 +10,7 @@
 #ifdef TAPPING_TERM          
     #undef TAPPING_TERM      
 #endif                       
-#define TAPPING_TERM 200
+#define TAPPING_TERM 170
 #define QUICK_TAP_TERM 0
 // #define QUICK_TAP_TERM_PER_KEY
 // #define BILATERAL_COMBINATIONS

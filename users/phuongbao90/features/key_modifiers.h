@@ -24,5 +24,6 @@
 #define NUM_H     LT(_NUM,KC_H)
 
 #define SHT_TAB   RSFT_T(KC_TAB)
+#define SHT_ENT   RSFT_T(KC_ENT)
 
 // TAP HOLD

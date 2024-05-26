@@ -10,9 +10,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 [_COLEMAK] = LAYOUT_wrapper(
     XXXXXXX,    FIVE_XX,                                      FIVE_XX,               XXXXXXX,
     XXXXXXX,    ROW4_LEFT_COLEMAK,                            ROW4_RGHT_COLEMAK,     XXXXXXX,
-    XXXXXXX,    ROW3_LEFT_COLEMAK,                            ROW3_RGHT_COLEMAK,     XXXXXXX,
+    XXXXXXX,    ROW3_LEFT_COLEMAK_SOFLE,                      ROW3_RGHT_COLEMAK,     XXXXXXX,
     XXXXXXX,    ROW2_LEFT_COLEMAK,   QK_BOOT,     QK_BOOT,    ROW2_RGHT_COLEMAK,     XXXXXXX,
-    THREE_X,    ROW1_LEFT_COLEMAK,                            ROW1_RGHT_COLEMAK,     THREE_X
+    THREE_X,    ROW1_LEFT_COLEMAK,                            ROW1_RGHT_COLEMAK_SOFLE     
 ),
 
 [_NAV] = LAYOUT_wrapper(
