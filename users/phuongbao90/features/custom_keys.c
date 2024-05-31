@@ -37,6 +37,15 @@ bool custom_keys_process_record_user(uint16_t keycode, keyrecord_t *record) {
                 unregister_code(KC_LSFT);
             }
             return false;
+        case KC_LCLICK:
+            if (record->event.pressed) {
+                // When the key is pressed, send a left click down event
+                register_code(KC_BTN1);
+            } else {
+                // When the key is released, send a left click up event
+                unregister_code(KC_BTN1);
+            }
+            return false; // Skip all further processing of this key
     }
     return true;
 }

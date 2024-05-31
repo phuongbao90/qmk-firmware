@@ -68,7 +68,7 @@
 
 #define ROW1_LEFT_MOUSE_CHA       KC_BTN2,  KC_BTN1,  KC_BTN3
 
-#define ROW1_LEFT_COLEMAK_CHA     SYM_BSP,  NAV_SPC,  _______
+#define ROW1_LEFT_COLEMAK_CHA     SYM_BSP,  NAV_SPC,  KC_LCLICK
 #define ROW1_LEFT_NAV_CHA_CHA     _______,  _______,  _______
 #define ROW1_LEFT_SYM_CHA_CHA     _______,  _______,  _______
 #define ROW1_LEFT_NUM_CHA_CHA     _______,  _______,  _______
