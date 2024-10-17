@@ -6,7 +6,7 @@
   "author": "phuongbao90 <phuongbao90@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "flash:cha": "qmk flash -kb bastardkb/charybdis/3x6/v2/splinky_3 -km phuongbao90",
+    "flash:cha": "qmk flash -kb bastardkb/charybdis/3x6/v2/splinky_2 -km phuongbao90",
     "compile:sofle": "qmk compile -kb sofle -km phuongbao90",
     "flash:sofle": "qmk flash -kb sofle -km phuongbao90",
     "flash:klor": "qmk flash -kb klor/2040 -km phuongbao90"

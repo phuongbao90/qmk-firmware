@@ -115,6 +115,6 @@ layer_state_t layer_state_set_user(layer_state_t state) {
 
 void matrix_scan_user(void) {
     general_matrix_scan_tasks();
-    pointer_layer_scan_tasks();
+    // pointer_layer_scan_tasks();
 }
 
