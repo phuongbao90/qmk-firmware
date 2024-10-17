@@ -14,8 +14,8 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-
-#include "quantum.h"
+#include "charybdis.h"
+// #include "quantum.h"
 
 // clang-format off
 #ifdef RGB_MATRIX_ENABLE
