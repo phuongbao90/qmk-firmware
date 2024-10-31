@@ -16,6 +16,7 @@
         "mousekey": true,
         "nkro": true,
         "pointing_device": true,
+        "tap_dance": true
     },
     "layouts": {
         "LAYOUT": {
@@ -31,5 +32,5 @@
     },
     "dynamic_keymap": {
         "layer_count": 8
-    },
+    }
 }

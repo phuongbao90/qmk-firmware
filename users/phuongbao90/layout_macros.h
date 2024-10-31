@@ -2,7 +2,7 @@
 
 #define SIX_XXX  _______, _______, _______, _______, _______
 #define FIVE_XX  _______, _______, _______, _______, _______
-#define FOUR_XX  _______, _______, _______, _______
+#define FOUR_XX  _______, _______,____, _______
 #define THREE_X  _______, _______, _______
 
 /* --------------------------------- colemak -------------------------------- */
@@ -28,7 +28,7 @@
 
 #define ROW4_RGHT_NAV          KC_PGUP,         C(KC_LEFT),         KC_UP,       C(KC_RIGHT),   KC_HOME
 #define ROW3_RGHT_NAV          KC_PGDN,         KC_LEFT,            KC_DOWN,     KC_RGHT,       KC_END
-#define ROW2_RGHT_NAV          G(KC_LBRC),      G(KC_RBRC),         LAG(KC_LEFT),LAG(KC_RGHT),  QK_REP
+#define ROW2_RGHT_NAV          SCMD(KC_LBRC),   SCMD(KC_RBRC),       XXXXXXX,     XXXXXXX,       QK_REP
 #define ROW1_RGHT_NAV          _______,         KC_RSFT
 
 /* --------------------------------- symbol --------------------------------- */
@@ -45,15 +45,15 @@
 
 /* ---------------------------------- num ----------------------------------- */
 
-#define ROW4_LEFT_NUM          KC_F4,           KC_F5,              KC_F6,       KC_F12,        KC_F9
-#define ROW3_LEFT_NUM          KC_LCTL,         KC_LOPT,            KC_LCMD,     KC_LSFT,       KC_F8
-#define ROW2_LEFT_NUM          KC_F1,           KC_F2,              KC_F3,       KC_F10,        KC_F7
-#define ROW1_LEFT_NUM          _______,         _______
+#define ROW4_LEFT_NUM          KC_F9,           KC_F10,             KC_F11,       KC_F12,       KC_F15
+#define ROW3_LEFT_NUM          KC_F5,           KC_F6,              KC_F7,        KC_F8,        KC_F14
+#define ROW2_LEFT_NUM          KC_F1,           KC_F2,              KC_F3,        KC_F4,        KC_F13
+#define ROW1_LEFT_NUM          KC_LCTL,         KC_LOPT
 
 #define ROW4_RGHT_NUM          KC_PAST,         KC_7,               KC_8,        KC_9,          KC_PPLS
 #define ROW3_RGHT_NUM          KC_EQUAL,        KC_4,               KC_5,        KC_6,          KC_QUOT
 #define ROW2_RGHT_NUM          KC_0,            KC_1,               KC_2,        KC_3,          KC_MINS
-#define ROW1_RGHT_NUM          KC_COMMA,        KC_RSFT
+#define ROW1_RGHT_NUM          KC_LCMD,         KC_RSFT
 
 /* ------------------------------ LAYER_MOUSE ----------------------------- */
 #define ROW4_LEFT_MOUSE        XXXXXXX,         XXXXXXX,            XXXXXXX,     XXXXXXX,       XXXXXXX
@@ -71,8 +71,10 @@
 #define ROW1_LEFT_COLEMAK_CHA     SYM_BSP,  NAV_SPC,  KC_LCLICK
 #define ROW1_LEFT_NAV_CHA_CHA     _______,  _______,  _______
 #define ROW1_LEFT_SYM_CHA_CHA     _______,  _______,  _______
-#define ROW1_LEFT_NUM_CHA_CHA     _______,  _______,  _______
+#define ROW1_LEFT_NUM_CHA_CHA     KC_LCTL,  KC_LOPT,  KC_LCMD
 
 /* ------------------------------ SOFLE ----------------------------- */
 #define ROW3_LEFT_COLEMAK_SOFLE     CTL_A,   ALT_R,   GUI_S,   SHT_T, HYP_G
 #define ROW1_RGHT_COLEMAK_SOFLE     SHT_TAB, KC_LEFT, KC_DOWN, KC_UP, KC_RGHT
+
+

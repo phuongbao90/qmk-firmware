@@ -1,5 +1,3 @@
-// #include "features/layers.h"
-// #include "features/key_modifiers.h"
 #include QMK_KEYBOARD_H
 
 #include <stdio.h>
@@ -9,21 +7,6 @@
 
 #define LAYOUT_wrapper(...) LAYOUT(__VA_ARGS__)
 
-/* -------------------------------------------------------------------------- */
-/** \brief Automatically enable sniping-mode on the pointer layer. */
-#define CHARYBDIS_AUTO_SNIPING_ON_LAYER LAYER_POINTER
-
-#ifdef CHARYBDIS_AUTO_POINTER_LAYER_TRIGGER_ENABLE
-static uint16_t auto_pointer_layer_timer = 0;
-
-#    ifndef CHARYBDIS_AUTO_POINTER_LAYER_TRIGGER_TIMEOUT_MS
-#        define CHARYBDIS_AUTO_POINTER_LAYER_TRIGGER_TIMEOUT_MS 1000
-#    endif // CHARYBDIS_AUTO_POINTER_LAYER_TRIGGER_TIMEOUT_MS
-
-#    ifndef CHARYBDIS_AUTO_POINTER_LAYER_TRIGGER_THRESHOLD
-#        define CHARYBDIS_AUTO_POINTER_LAYER_TRIGGER_THRESHOLD 2
-#    endif // CHARYBDIS_AUTO_POINTER_LAYER_TRIGGER_THRESHOLD
-#endif     // CHARYBDIS_AUTO_POINTER_LAYER_TRIGGER_ENABLE
 
 /* -------------------------------------------------------------------------- */
 // clang-format off
@@ -34,30 +17,30 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         KC_RGHT,      ROW2_LEFT_COLEMAK,           ROW2_RGHT_COLEMAK,     KC_DOWN,
                       ROW1_LEFT_COLEMAK_CHA,       ROW1_RGHT_COLEMAK
   ),
-//   [_NAV] = LAYOUT_wrapper(
-//         XXXXXXX,      ROW4_LEFT_NAV,               ROW4_RGHT_NAV,         XXXXXXX,
-//         XXXXXXX,      ROW3_LEFT_NAV,               ROW3_RGHT_NAV,         XXXXXXX,
-//         XXXXXXX,      ROW2_LEFT_NAV,               ROW2_RGHT_NAV,         XXXXXXX,
-//                       ROW1_LEFT_NAV_CHA_CHA,       ROW1_RGHT_NAV
-//   ),
-//   [_SYM] = LAYOUT_wrapper(
-//         XXXXXXX,      ROW4_LEFT_SYM,               ROW4_RGHT_SYM,         XXXXXXX,
-//         XXXXXXX,      ROW3_LEFT_SYM,               ROW3_RGHT_SYM,         XXXXXXX,
-//         XXXXXXX,      ROW2_LEFT_SYM,               ROW2_RGHT_SYM,         XXXXXXX,
-//                       ROW1_LEFT_SYM_CHA_CHA,       ROW1_RGHT_SYM
-//   ),
-//   [_NUM] = LAYOUT_wrapper(
-//         XXXXXXX,      ROW4_LEFT_NUM,               ROW4_RGHT_NUM,         XXXXXXX,
-//         XXXXXXX,      ROW3_LEFT_NUM,               ROW3_RGHT_NUM,         XXXXXXX,
-//         XXXXXXX,      ROW2_LEFT_NUM,               ROW2_RGHT_NUM,         XXXXXXX,
-//                       ROW1_LEFT_NUM_CHA_CHA,       ROW1_RGHT_NUM
-//   ),
-//   [LAYER_POINTER] = LAYOUT_wrapper(
-//         XXXXXXX,      ROW4_LEFT_MOUSE,             ROW4_RGHT_MOUSE,       XXXXXXX,
-//         XXXXXXX,      ROW3_LEFT_MOUSE,             ROW3_RGHT_MOUSE,       XXXXXXX,
-//         XXXXXXX,      ROW2_LEFT_MOUSE,             ROW2_RGHT_MOUSE,       XXXXXXX,
-//                       ROW1_LEFT_MOUSE_CHA,         ROW1_RGHT_MOUSE
-//   ),
+  [_NAV] = LAYOUT_wrapper(
+        XXXXXXX,      ROW4_LEFT_NAV,               ROW4_RGHT_NAV,         XXXXXXX,
+        XXXXXXX,      ROW3_LEFT_NAV,               ROW3_RGHT_NAV,         XXXXXXX,
+        XXXXXXX,      ROW2_LEFT_NAV,               ROW2_RGHT_NAV,         XXXXXXX,
+                      ROW1_LEFT_NAV_CHA_CHA,       ROW1_RGHT_NAV
+  ),
+  [_SYM] = LAYOUT_wrapper(
+        XXXXXXX,      ROW4_LEFT_SYM,               ROW4_RGHT_SYM,         XXXXXXX,
+        XXXXXXX,      ROW3_LEFT_SYM,               ROW3_RGHT_SYM,         XXXXXXX,
+        XXXXXXX,      ROW2_LEFT_SYM,               ROW2_RGHT_SYM,         XXXXXXX,
+                      ROW1_LEFT_SYM_CHA_CHA,       ROW1_RGHT_SYM
+  ),
+  [_NUM] = LAYOUT_wrapper(
+        XXXXXXX,      ROW4_LEFT_NUM,               ROW4_RGHT_NUM,         XXXXXXX,
+        XXXXXXX,      ROW3_LEFT_NUM,               ROW3_RGHT_NUM,         XXXXXXX,
+        XXXXXXX,      ROW2_LEFT_NUM,               ROW2_RGHT_NUM,         XXXXXXX,
+                      ROW1_LEFT_NUM_CHA_CHA,       ROW1_RGHT_NUM
+  ),
+  [LAYER_POINTER] = LAYOUT_wrapper(
+        XXXXXXX,      ROW4_LEFT_MOUSE,             ROW4_RGHT_MOUSE,       XXXXXXX,
+        XXXXXXX,      ROW3_LEFT_MOUSE,             ROW3_RGHT_MOUSE,       XXXXXXX,
+        XXXXXXX,      ROW2_LEFT_MOUSE,             ROW2_RGHT_MOUSE,       XXXXXXX,
+                      ROW1_LEFT_MOUSE_CHA,         ROW1_RGHT_MOUSE
+  ),
 };
 // clang-format 
 
