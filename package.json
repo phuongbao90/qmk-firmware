@@ -10,6 +10,7 @@
     "compile:sofle": "qmk compile -kb sofle -km phuongbao90",
     "flash:sofle": "qmk flash -kb sofle -km phuongbao90",
     "flash:klor": "qmk flash -kb klor/2040 -km phuongbao90",
-    "flash:ploopy": "qmk flash -kb ploopyco/madromys -km via"
-  }
+    "flash:ploopy": "do not use this, check vial"
+  },
+  "packageManager": "yarn@1.22.22"
 }
