@@ -5,6 +5,8 @@
 #define FOUR_XX  _______, _______,____, _______
 #define THREE_X  _______, _______, _______
 
+#define KC_SWITCH_APP LOPT(KC_GRAVE)
+
 /* --------------------------------- colemak -------------------------------- */
 
 #define ROW4_LEFT_COLEMAK      KC_Q,            KC_W,               KC_F,        KC_P,          KC_B
@@ -26,9 +28,9 @@
 #define ROW2_LEFT_NAV          CTL_SFT,         OPT_SFT,            CMD_SFT,     XXXXXXX,       XXXXXXX
 #define ROW1_LEFT_NAV          XXXXXXX,         XXXXXXX
 
-#define ROW4_RGHT_NAV          KC_PGUP,         C(KC_LEFT),         KC_UP,       C(KC_RIGHT),   KC_HOME
-#define ROW3_RGHT_NAV          KC_PGDN,         KC_LEFT,            KC_DOWN,     KC_RGHT,       KC_END
-#define ROW2_RGHT_NAV          SCMD(KC_LBRC),   SCMD(KC_RBRC),       XXXXXXX,     XXXXXXX,       QK_REP
+#define ROW4_RGHT_NAV          KC_PGUP,         C(KC_LEFT),         KC_UP,        C(KC_RIGHT),   KC_HOME
+#define ROW3_RGHT_NAV          KC_PGDN,         KC_LEFT,            KC_DOWN,      KC_RGHT,       KC_END
+#define ROW2_RGHT_NAV          SCMD(KC_LBRC),   SCMD(KC_RBRC),      KC_SWITCH_APP,XXXXXXX,       QK_REP
 #define ROW1_RGHT_NAV          _______,         KC_RSFT
 
 /* --------------------------------- symbol --------------------------------- */
