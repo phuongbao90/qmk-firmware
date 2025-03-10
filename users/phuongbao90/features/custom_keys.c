@@ -35,6 +35,7 @@ bool custom_keys_process_record_user(uint16_t keycode, keyrecord_t *record) {
                 register_code(KC_LSFT);
             } else {
                 unregister_code(KC_LSFT);
+                unregister_code(KC_LCMD);
             }
             return false;
         case KC_LCLICK:

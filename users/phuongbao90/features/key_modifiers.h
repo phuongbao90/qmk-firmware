@@ -17,7 +17,9 @@
 
 // LAYERKEYS ├───────────────────────────────────────┐
 #define NAV_SPC   LT(MO(_NAV),KC_SPC)  
+#define NAV       MO(_NAV)
 #define SYM_BSP   LT(MO(_SYM),KC_BSPC)
+#define SYM       MO(_SYM)
 #define MOU_ENT   LT(MO(LAYER_POINTER),KC_ENT)
 
 #define NUM_D     LT(MO(_NUM),KC_D)

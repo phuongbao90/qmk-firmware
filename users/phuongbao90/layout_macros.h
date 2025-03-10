@@ -18,18 +18,19 @@
 #define ROW3_RGHT_COLEMAK      HYP_M,           SHT_N,              GUI_E,       ALT_I,         CTL_O
 #define ROW2_RGHT_COLEMAK      RCMD_K,          NUM_H,              KC_COMM,     KC_DOT,        KC_SLSH
 #define ROW1_RGHT_COLEMAK      MOU_ENT,         SHT_TAB
+#define ROW1_RGHT_COLEMAK_KLOR SHT_TAB,         SYM
 
 /* ------------------------------- navigation ------------------------------- */
 
 #define ROW4_LEFT_NAV          KC_ESC,          XXXXXXX,            XXXXXXX,     XXXXXXX,       XXXXXXX
 #define ROW3_LEFT_NAV          KC_LCTL,         KC_LOPT,            KC_LCMD,     KC_LSFT,       KC_HYPR
-#define ROW3_LEFT_NAV_KLOR     KC_LCTL,         KC_LOPT,            KC_LCMD,     SAFE_SHIFT,    KC_HYPR
+#define ROW3_LEFT_NAV_KLOR     KC_LCTL,         KC_LOPT,            KC_LCMD,     XXXXXXX,       KC_LSFT
 
 #define ROW2_LEFT_NAV          CTL_SFT,         OPT_SFT,            CMD_SFT,     XXXXXXX,       XXXXXXX
 #define ROW1_LEFT_NAV          XXXXXXX,         XXXXXXX
 
-#define ROW4_RGHT_NAV          KC_PGUP,         C(KC_LEFT),         KC_UP,        C(KC_RIGHT),   KC_HOME
-#define ROW3_RGHT_NAV          KC_PGDN,         KC_LEFT,            KC_DOWN,      KC_RGHT,       KC_END
+#define ROW4_RGHT_NAV          KC_PGUP,         KC_HOME,            KC_UP,        KC_END,        XXXXXXX
+#define ROW3_RGHT_NAV          KC_PGDN,         KC_LEFT,            KC_DOWN,      KC_RGHT,       XXXXXXX
 #define ROW2_RGHT_NAV          SCMD(KC_LBRC),   SCMD(KC_RBRC),      KC_SWITCH_APP,XXXXXXX,       QK_REP
 #define ROW1_RGHT_NAV          _______,         KC_RSFT
 
