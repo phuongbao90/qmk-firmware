@@ -57,7 +57,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     if (!tap_hold_process_record_user(keycode, record)) return false;
     // if (!one_shot_process_record_user(keycode, record)) return false;
     if (!custom_keys_process_record_user(keycode, record)) return false;
-    if (!process_orbital_mouse(keycode, record)) { return false; }
+    // if (!process_orbital_mouse(keycode, record)) { return false; }
 
     return true;
 }
@@ -70,7 +70,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 
 void matrix_scan_user(void) {
   tap_hold_matrix_scan_user();
-  orbital_mouse_task();
+//   orbital_mouse_task();
   // one_shot_matrix_scan_user();
 }
 

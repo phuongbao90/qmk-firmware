@@ -5,7 +5,7 @@
 #include "layout_macros.h"
 #include "features/key_modifiers.h" 
 #include "features/taphold.h" 
-#include "features/orbital_mouse.h"
+// #include "features/orbital_mouse.h"
 #include "features/one_shot.h"
 
 #ifdef ENCODER_ENABLE

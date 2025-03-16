@@ -1,5 +1,5 @@
 SRC += phuongbao90.c
-SRC += features/orbital_mouse.c
+# SRC += features/orbital_mouse.c
 SRC += features/one_shot.c
 SRC += features/custom_keys.c
 SRC += features/taphold.c
@@ -23,10 +23,10 @@ MOUSEKEY_ENABLE = yes
 TAP_DANCE_ENABLE = yes
 REPEAT_KEY_ENABLE = yes
 
-NKRO_ENABLE = no
-LTO_ENABLE = no
-EXTRAKEY_ENABLE = no
-KEY_OVERRIDE_ENABLE = no
+NKRO_ENABLE = yes
+LTO_ENABLE = yes
+EXTRAKEY_ENABLE = yes
+KEY_OVERRIDE_ENABLE = yes
 
 RGB_MATRIX_SUPPORTED = no  # RGB matrix is supported and enabled by default
 RGBLIGHT_SUPPORTED = no    # RGB underglow is supported, but not enabled by default

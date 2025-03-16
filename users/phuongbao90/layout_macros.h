@@ -59,19 +59,19 @@
 #define ROW1_RGHT_NUM          KC_LCMD,         KC_RSFT
 
 /* ------------------------------ LAYER_MOUSE ----------------------------- */
-#define ROW4_LEFT_MOUSE        XXXXXXX,         XXXXXXX,            XXXXXXX,     XXXXXXX,       XXXXXXX
-#define ROW3_LEFT_MOUSE        KC_LCTL,         KC_LOPT,            KC_LCMD,     KC_LSFT,       XXXXXXX
+#define ROW4_LEFT_MOUSE        KC_MS_ACCEL0,    KC_MS_ACCEL1,       KC_MS_ACCEL2,XXXXXXX,       XXXXXXX
+#define ROW3_LEFT_MOUSE        KC_LCTL,         KC_ROPT,            KC_LCMD,     KC_LSFT,       XXXXXXX
 #define ROW2_LEFT_MOUSE        XXXXXXX,         XXXXXXX,            XXXXXXX,     XXXXXXX,       XXXXXXX
 #define ROW1_LEFT_MOUSE        KC_BTN2,         KC_BTN1
 
-#define ROW4_RGHT_MOUSE        OM_DBLS,         OM_BTNS,            OM_U   ,     OM_BTN2,       HYPR(KC_J)
-#define ROW3_RGHT_MOUSE        OM_HLDS,         OM_L   ,            OM_D   ,     OM_R   ,       HYPR(KC_L)
-#define ROW2_RGHT_MOUSE        OM_RELS,         OM_W_D ,            OM_W_U ,     OM_BTN3,       HYPR(KC_K)
+#define ROW4_RGHT_MOUSE        KC_MS_WH_UP,     KC_MS_BTN1,         MEH(KC_UP)  ,   KC_MS_BTN2,    HYPR(KC_J)
+#define ROW3_RGHT_MOUSE        KC_MS_WH_DOWN,   MEH(KC_LEFT),       MEH(KC_DOWN),   MEH(KC_RGHT),  HYPR(KC_L)
+#define ROW2_RGHT_MOUSE        XXXXXXX,         XXXXXXX ,           XXXXXXX ,       XXXXXXX,       HYPR(KC_K)
 #define ROW1_RGHT_MOUSE        XXXXXXX,         XXXXXXX
 
 #define ROW1_LEFT_MOUSE_CHA       KC_BTN2,  KC_BTN1,  KC_BTN3
 
-#define ROW1_LEFT_COLEMAK_CHA     SYM_BSP,  NAV_SPC,  KC_LCLICK
+#define ROW1_LEFT_COLEMAK_CHA     SYM_BSP,  NAV_SPC,  MOU_ENT
 #define ROW1_LEFT_NAV_CHA_CHA     _______,  _______,  _______
 #define ROW1_LEFT_SYM_CHA_CHA     _______,  _______,  _______
 #define ROW1_LEFT_NUM_CHA_CHA     KC_LCTL,  KC_LOPT,  KC_LCMD
