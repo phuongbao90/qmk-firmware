@@ -31,7 +31,7 @@
 
 #define ROW4_RGHT_NAV          KC_PGUP,         KC_HOME,            KC_UP,        KC_END,        XXXXXXX
 #define ROW3_RGHT_NAV          KC_PGDN,         KC_LEFT,            KC_DOWN,      KC_RGHT,       XXXXXXX
-#define ROW2_RGHT_NAV          SCMD(KC_LBRC),   SCMD(KC_RBRC),      KC_SWITCH_APP,XXXXXXX,       QK_REP
+#define ROW2_RGHT_NAV          C(KC_PAGE_UP),   C(KC_PAGE_DOWN),    KC_SWITCH_APP,XXXXXXX,       QK_REP
 #define ROW1_RGHT_NAV          _______,         KC_RSFT
 
 /* --------------------------------- symbol --------------------------------- */

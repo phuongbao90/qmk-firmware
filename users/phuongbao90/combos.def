@@ -1,4 +1,6 @@
-COMB(RS_COMBO,          LCTL(KC_S),         OPT_T(KC_R),  CMD_T(KC_S))
+COMB(RS_COMBO,           LCMD(KC_SPC),         OPT_T(KC_R),  CMD_T(KC_S))
+// COMB(ST_COMBO,           LSFT(KC_SPC),         CMD_T(KC_S),  LSFT_T(KC_T))
+// COMB(RS_COMBO,          LCTL(KC_S),         OPT_T(KC_R),  CMD_T(KC_S))
 // COMB(ST_COMBO,          LCTL(KC_T),         CMD_T(KC_S),  LSFT_T(KC_T))
 // COMB(RT_COMBO,          LCTL(KC_A),         OPT_T(KC_R),  LSFT_T(KC_T))
 
