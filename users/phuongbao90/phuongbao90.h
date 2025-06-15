@@ -21,5 +21,6 @@ typedef enum {
     _NAV,
     _SYM,
     _NUM,
-    LAYER_POINTER
+    LAYER_POINTER,
+    VSCODE
 } layers_t;

@@ -41,6 +41,12 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         XXXXXXX,      ROW2_LEFT_MOUSE,             ROW2_RGHT_MOUSE,       XXXXXXX,
                       ROW1_LEFT_MOUSE_CHA,         ROW1_RGHT_MOUSE
   ),
+  [VSCODE] = LAYOUT_wrapper(
+        XXXXXXX,      ROW4_LEFT_VSCODE,             ROW4_RGHT_VSCODE,       XXXXXXX,
+        XXXXXXX,      ROW3_LEFT_VSCODE,             ROW3_RGHT_VSCODE,       XXXXXXX,
+        XXXXXXX,      ROW2_LEFT_VSCODE,             ROW2_RGHT_VSCODE,       XXXXXXX,
+            _______,  ROW1_LEFT_VSCODE,             ROW1_RGHT_VSCODE
+  ),
 };
 // clang-format 
 
@@ -100,4 +106,3 @@ void matrix_scan_user(void) {
     general_matrix_scan_tasks();
     // pointer_layer_scan_tasks();
 }
-

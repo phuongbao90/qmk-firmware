@@ -21,6 +21,7 @@
 #define SYM_BSP   LT(MO(_SYM),KC_BSPC)
 #define SYM       MO(_SYM)
 #define MOU_ENT   LT(MO(LAYER_POINTER),KC_ENT)
+#define VSCODE_K  LT(MO(VSCODE),OSL(VSCODE))
 
 #define NUM_D     LT(MO(_NUM),KC_D)
 #define NUM_H     LT(_NUM,KC_H)
